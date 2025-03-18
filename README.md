@@ -31,7 +31,7 @@ Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio 
 
 - Linguagens e frameworks utilizados: HTML, CSS, JavaScript e Phaser.
 
-- # 4. Exercício perguntas e respostas semana 6 (lista 1) 👩🏼‍💻
+# 4. Exercício perguntas e respostas semana 6 (lista 1) 👩🏼‍💻
 
 Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio de uma lista de exercícios (definidos pelo professor Cristiano Benites). O tema é atrelado a javaScript, lógica de programação e POO (Programação Orientada Objetos)
 
@@ -40,7 +40,7 @@ Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio 
 
 - Conceitos trabalhados: JavaScript, funções, operadores, estruturas condicionais, POO...
 
-- # 5. Exercício perguntas e respostas semana 7-8 (lista 2) 👩🏼‍💻
+# 5. Exercício perguntas e respostas semana 7-8 (lista 2) 👩🏼‍💻
 
 Este repositório tem a finalidade de apresentar a tarefa desenvolvida por meio de uma lista de exercícios (definidos pelo professor Cristiano Benites). O tema é atrelado a 
 

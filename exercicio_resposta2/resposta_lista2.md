@@ -1,198 +1,25 @@
-# Instruções
+GABARITO QUESTÕES DE COMPUTAÇÃO
 
-- Faça uma cópia deste arquivo .md para um repositório próprio
-- Resolva as 6 questões objetivas assinalando a alternativa correta
-- Resolva as 4 questões dissertativas escrevendo no próprio arquivo .md
-  - lembre-se de utilizar as estruturas de código como ``esta aqui com ` `` ou
-```javascript
-//esta aqui com ```
-let a = "olá"
-let b = 10
-print(a)
-```
-- Resolva as questões com uso do Visual Studio Code ou ambiente similar.
-- Teste seus códigos antes de trazer a resposta para cá.
-- Cuidado com ChatGPT e afins: entregar algo só para ganhar nota não faz você aprender e ficar mais inteligente. Não seja dependente da máquina! (E não se envolva em plágio!)
-- ao final, publique seu arquivo lista_02.md com as respostas em seu repositório, e envie o link pela Adalove. 
+### 1: A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.
 
-# Questões objetivas
+#### Justificativa:
 
-**1)** Considere o seguinte código JavaScript:
+O código de fato avalia a expressão booleana através de "p % q === 1 && r \* 2 > p) || q + r < p". A primeira sessão verifica se o resto da divisão de `p` por `q` é idêntico a 1 e se `r` multiplicado por `2` é maior que `p`. Em seguida, ele verifica se o valor de `q` + `r` é menor que o valor de `p`. É válido dizer que ele retorna true se a primeira ou (`||`) a segunda condição for verdadeira e a primeira sessão retorna como verdadeira (`true`) apenas se suas duas condições unidas por `&&` forem verdadeiras. Ademais, o código faz uma iteração sobre o array `valores[]` multiplicando e somando os valores com o anterior. Após cada operação, seu resultado é exibido através do console.log()
 
-```javascript
-//EX01
-let p = 10;
-let q = 3;
-let r = 6;
+### 2: A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'
 
-let resultado = (p % q === 1) && (r * 2 > p) || (q + r < p);
-console.log(resultado);
+#### Justificativa:
 
-const valores = [3, 6, 9, 12, 15];
-let produto = 1;
+Ambas as funções fazem a mesma análise de crédito. A primeira função `analisarCredito1` cria um array com 4 valores, além de estabelecer variáveis para armazenar o total das compras, limite, status, saldo disponível, e a variável `i`, que é utilizada como contador. Seguindo o código, é possível observar a presença da estrutura de repetição `do while`, que executará a soma do total das compras com os valores do array de compras e só irá parar quando o limite tiver valor menor/igual ao valor total das compras ou o valor de i for maior/igual o numero de elementos do array. Por fim, é feito um cálculo do saldo disponível (`saldoDisponivel = limite - totalCompras;`), caso ele seja menor que 0, seu status é passado como negado, até que então seu crédito é exibido no console, junto ao saldo disponível. Já a segunda versão da função, a `analisarCrédito2()`, é quase idêntica a primeira, mas utiliza apenas o `While`. Na prática, a diferença é que `do while` será um laço executado ao menos uma vez, pois sua verificação é no final do trecho, enquanto o while faz a verificação logo no inicio e não prossegue caso ela seja falsa.
 
-for (let j = 0; j < valores.length; j++) {
-  produto *= valores[j];
-}
+### 3: B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".
 
-console.log("O produto dos valores é:", produto);
+#### Justificativa:
 
+O código em questão é um exemplo muito utilizado para o estudo de estruturas condicionais... Nele, temos uma variável definida com o valor 21. Com isso, é feita a primeira verificação: se a idade é maior ou igual a 18 E a idade é menor que 60, o primeiro laço é execultado (`  console.log("Você é um adulto!");`), caso não, ele passa para a segunda verificação (`Else if`) e se ela for verdadeira (idade menor que 18), o segundo laço é executado (`  console.log("Você é menor de idade!");`). Caso nenhuma das anteriores tenham sido verdadeiras, ele se enquadra no ultimo laço (`else`) e exibe "` console.log("Você está na melhor idade!");`". É importante mencionar, que o seguinte código faz uma verificação e só passa para outra estrutura se a primeira for falsa, pois caso ela seja verdadeira, os outros laços nem são verificados.
 
-```
-Qual das seguintes alternativas melhor descreve o que o código faz?
+#### 4: D)
 
-A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.
-
-B) O código avalia a expressão booleana, imprime `false`, calcula o produto dos números na lista e imprime o resultado no console.
-
-C) O código avalia a expressão booleana, imprime `true` e, em seguida, verifica se o número 6 está na lista.
-
-D) O código avalia a expressão booleana, imprime `false` e ordena os valores em ordem crescente.
-
-
-______
-
-**2)** O código a seguir contém duas funções que calculam o limite de crédito de um cliente com base nos seus gastos e na renda mensal.
-
-```javascript
-// Versão 1 da função de análise de crédito
-function analisarCredito1() {
-    var compras = [2500, 1200, 800, 100];
-    var totalCompras = compras[0];
-    var limite = 5000;
-    var status = 'aprovado';
-    var saldoDisponivel = 0;
-    var i = 1;
-
-    do {
-        totalCompras += compras[i];
-        i++;
-    } while (limite >= totalCompras && i < compras.length);
-
-    saldoDisponivel = limite - totalCompras;
-
-    if (saldoDisponivel < 0) {
-        status = 'negado';
-    }
-    console.log(`Seu crédito foi ${status}. Saldo disponível: ${saldoDisponivel}.`);
-}
-```
-
-```javascript
-// Versão 2 da função de análise de crédito
-function analisarCredito2() {
-    var compras = [2500, 1200, 800, 100];
-    var totalCompras = compras[0];
-    var limite = 5000;
-    var status = 'aprovado';
-    var saldoDisponivel = 0;
-    var i = 1;
-
-    while (limite >= totalCompras && i < compras.length) {
-        totalCompras += compras[i];
-        i++;
-    }
-
-    saldoDisponivel = limite - totalCompras;
-
-    if (saldoDisponivel < 0) {
-        status = 'negado';
-    }
-    console.log(`Seu crédito foi ${status}. Saldo disponível: ${saldoDisponivel}.`);
-}
-```
-Se ambas as funções forem executadas com os valores fornecidos, qual será a saída exibida no console?
-
-A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'
-
-B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
-
-C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
-
-D) Ambas as funções exibirão: 'Seu crédito foi aprovado Saldo disponível: 500.'
-______
-
-**3)** Considere o seguinte trecho de código em JavaScript:
-```javascript
-//EX03
-const idade = 21;
-
-if (idade >= 18 && idade < 60) {
-  console.log("Você é um adulto!");
-} else if (idade < 18) {
-  console.log("Você é menor de idade!");
-} else {
-  console.log("Você está na melhor idade!");
-}
-```
-Qual das seguintes alternativas melhor descreve o comportamento do código?
-
-A) O código verifica se a idade indica um adulto ou um idoso e exibe a mensagem correspondente.
-
-B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".
-
-C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
-
-D) O código verifica se a idade é menor de 18, entre 18 e 60 ou acima de 60, imprimindo uma mensagem específica para cada caso.
-______
-
-**4)** Qual será o resultado impresso no console após a execução do seguinte código?
-```javascript
-//EX04
-var energiaDisponivel = 1200;
-var bateriaExtra = 400;
-var consumoDispositivos = [300, 600, 500, 200, 400];
-
-for (var i = 0; i < consumoDispositivos.length; i++) {
-    var consumo = consumoDispositivos[i];
-
-    if (consumo <= energiaDisponivel) {
-        console.log("Dispositivo " + (i+1) + " ligado. Energia restante: " + (energiaDisponivel - consumo));
-        energiaDisponivel -= consumo;
-    } else if (consumo <= energiaDisponivel + bateriaExtra) {
-        console.log("Dispositivo " + (i+1) + " ligado com bateria extra. Energia restante: " + ((energiaDisponivel + bateriaExtra) - consumo));
-        energiaDisponivel = 0;
-        bateriaExtra -= (consumo - energiaDisponivel);
-    } else {
-        console.log("Dispositivo " + (i+1) + " não pode ser ligado. Energia insuficiente.");
-    }
-}
-```
-
-Escolha a opção que responde corretamente:
-
-A)
-Dispositivo 1 ligado. Energia restante: 900
-
-Dispositivo 2 ligado com bateria extra. Energia restante: 700
-
-Dispositivo 3 ligado. Energia restante: 200
-
-Dispositivo 4 ligado com bateria extra. Energia restante: 0
-
-Dispositivo 5 ligado. Energia restante: -200
-
-B)
-Dispositivo 1 ligado. Energia restante: 900
-
-Dispositivo 2 ligado com bateria extra. Energia restante: 700
-
-Dispositivo 3 ligado. Energia restante: 200
-
-Dispositivo 4 não pode ser ligado. Energia insuficiente.
-
-Dispositivo 5 não pode ser ligado. Energia insuficiente.
-
-C)
-Dispositivo 1 ligado. Energia restante: 900
-
-Dispositivo 2 ligado com bateria extra. Energia restante: 700
-
-Dispositivo 3 ligado. Energia restante: 400
-
-Dispositivo 4 não pode ser ligado. Energia insuficiente.
-
-D)
 Dispositivo 1 ligado. Energia restante: 900
 
 Dispositivo 2 ligado. Energia restante: 300
@@ -203,107 +30,191 @@ Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
 
-______
+#### Justificativa:
 
-**5)** Qual é a principal função do método update() em um jogo desenvolvido com Phaser.js?
+O código disponibilizado utiliza a estrutura de repetição `for` para iterar sobre o array `consumoDispositivos[]` e verificar a energia disponível. Seguindo o fluxo, o `for` passa por todos os elementos do array e para cada um ele armazena o consumo em uma variável e verifica (através da estrutura condicional `if`) se esse consumo é menor/igual a energia disponível ele exibe uma mensagem informando que ele está ligado e faz um cálculo da energia restante. Caso ele não se adeque a esta condição, passa para a próxima e verifica se seu consumo é menor/igual que a energia disponível somada a bateria Extra, se o retorno for verdadeiro, será exibida uma mensagem de que ele está ligado com bateria extra e haverá um calculo da energia restante. Por fim, se ele não tiver se enquadrado nos laços anteriores, o último `else` é executado, informando que a energia é insuficiente. Utilizando o primeiro valor como exemplo, ele passa pelo `for` e seu consumo que é igual a 300 é menor que a energia disponível, então ele exibe a energia restante. Contudo, vale dizer que a energia disponível vai sendo subtraída a cada iteração e não tem o mesmo valor inicial para cada valor do array
 
-Escolha a opção que melhor descreve seu propósito:
+### 5: B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.
+
+#### Justificativa:
+
+As outras estão incorretas pois:
 
 A) O método update() é responsável por carregar os assets do jogo antes da cena ser exibida.
 
-B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.
+- o método responsável por carregar os assets é o preload()
 
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
+- O método update() pode executar algumas dessas tarefas em paralelo, mas não é sua principal função
+
 D) O método update() é chamado apenas uma vez após a criação da cena, sendo utilizado para configurar variáveis iniciais do jogo.
-______
 
-**6)** Qual é o principal objetivo do módulo Matter.js Physics em Phaser.js?
+- O método responsável por configurar as variáveis iniciais do jogo é o init()
 
-Escolha a opção que responde corretamente:
+### 6: A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.
 
-A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.
+#### Justificativa:
+
+As outras estão incorretas pois:
 
 B) Gerenciar eventos de entrada do usuário, como cliques e toques na tela, permitindo movimentação de personagens.
 
+- O Matter.js implica na física do jogo, mas não tem como foco principal gerenciar os eventos citados acima
+
 C) Renderizar gráficos otimizados para jogos 2D e garantir uma taxa de quadros estável.
+
+- O Matter.js implica na física do jogo, não na parte gráfica
 
 D) Criar animações automáticas para sprites e objetos interativos sem necessidade de programação de movimentação.
 
-______
+- O Matter.js implica na física, mas não é capaz de criar animações automáticas
 
-# Questões dissertativas
-
-**7)** Uma loja online deseja implementar um sistema de classificação de pedidos com base no valor total da compra. O sistema deve determinar a categoria de um pedido com as seguintes regras:
+### 7:
 
 ```
+INÍCIO
 
-Pedidos abaixo de R$50,00 → "Frete não disponível!"
+DECLARE valorTotal: REAL
 
-Pedidos entre R$50,00 e R$199,99 (inclusive) → "Frete com custo adicional!"
+ESCREVA("Digite o valor total da compra:")
 
-Pedidos de R$200,00 ou mais → "Frete grátis!"
+LEIA(valorTotal)
+
+SE valorTotal < 50 ENTÃO
+
+      ESCREVA(“Frete não disponível!”)
+
+SENÃO SE valorTotal >= 50 E valorTotal <= 199.99
+
+      ESCREVA(“Frete com custo adicional!”)
+
+SENÃO
+ESCREVA (“Frete grátis!”)
+
+FIM SE
+
+FIMALGORITMO`
 ```
-Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
-______
 
-**8)** Considere a implementação da classe base Veiculo em um sistema de modelagem de veículos. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Carro e Moto, que herdam da classe Veiculo, adicionando atributos específicos e métodos para calcular o consumo de combustível de um carro e de uma moto, respectivamente.
+### 8:
 
 ```
-Classe Veiculo:
-Atributos:
+INICIO
 
+CLASSE Veiculo
+
+ATRIBUTOS:
 modelo
 ano
-Método Construtor(modelo, ano):
+quilometragem
+eficiencia
 
-Define os valores dos atributos modelo e ano com os valores passados como parâmetro.
-Método CalcularConsumo():
+METODOS:
+
+INICIAR(modelo, ano, quilometragem, eficiencia):
+ESTE.modelo <- modelo
+ESTE.ano <- ano
+ESTE.quilometragem <- quilometragem
+ESTE.eficiencia <- eficiencia
+
+CALCULARCONSUMO():
+// Método para o cálculo do consumo de combustível
+RETORNAR ESTE.quilometragem / ESTE.eficiencia
+
+CLASSE Carro HERDA Veiculo
+
+ATRIBUTOS:
+manual
+
+METODOS:
+
+INICIAR(modelo, ano, quilometragem, eficiencia, manual):
+SUPER.INICIAR(modelo, ano, quilometragem, eficiencia)
+ESTE.manual <- manual
+
+CALCULARCONSUMO():
+SUPER.CALCULARCONSUMO()
+RETORNAR ESTE.quilometragem / ESTE.eficiencia
+
+CLASSE Moto HERDA Veiculo
+
+ATRIBUTOS:
+precisaCapacete
+
+METODOS:
+
+INICIAR(modelo, ano, quilometragem, eficiencia, precisaCapacete):
+SUPER.INICIAR(modelo, ano, quilometragem, eficiencia)
+ESTE.precisaCapacete <- precisaCapacete
+
+CALCULARCONSUMO():
+SUPER.CALCULARCONSUMO()
+RETORNAR ESTE.quilometragem / (ESTE.eficiencia \* 1.2)
+
+FIMALGORITMO
 ```
-Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
-Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
-______
 
-**9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
-
-Entretanto, a sonda não pode ultrapassar um tempo máximo de descida para evitar desvios orbitais, nem pode desacelerar além de um limite mínimo, pois isso poderia causar instabilidade no pouso.
-
-Implemente a lógica dessa simulação em pseudocódigo, considerando a seguinte equação para atualização da velocidade:
-
-Considere a fórumla de atualização velocidade:
-```
-    velocidade = velocidadeInicial - desaceleracao * tempo
-```
-Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
-______
-
-**10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
-
-A seguir, é fornecida a implementação da função SomarMatrizesInvestimento(matrizA, matrizB), que soma os valores de duas matrizes de investimento. Sua tarefa é implementar uma função semelhante, porém que realize a multiplicação das matrizes de investimento, determinando como os investimentos afetam os resultados ao longo do tempo.
+9:
 
 ```
-Função SomarMatrizesInvestimento(matrizA, matrizB):  
-    # Verifica se as matrizes têm o mesmo número de linhas e colunas  
-    Se tamanho(matrizA) ≠ tamanho(matrizB) então:  
-        Retornar "As matrizes não podem ser somadas. Elas têm dimensões diferentes."  
-    Senão:  
-        linhas <- tamanho(matrizA)  
-        colunas <- tamanho(matrizA[0])  
-        matrizResultado <- novaMatriz(linhas, colunas)  
+INICIO
 
-        # Loop para percorrer cada elemento das matrizes e calcular a soma  
-        Para i de 0 até linhas-1 faça:  
-            Para j de 0 até colunas-1 faça:  
-                matrizResultado[i][j] <- matrizA[i][j] + matrizB[i][j]  
+velocidadeinicial = 100 // velocidade inicial
+desaceleracao = 10 // taxa de desaceleração
+tempo = 0 // tempo inicial de descida
+tempomaximo = 50 // tempo máximo permitido para a descida
+desaceleracaomina = 1 // valor mínimo de desaceleração
+velocidadesegura = 50 // velocidade segura para o pouso
 
-        Retornar matrizResultado  
+// Condição de desaceleração mínima
+SE desaceleracao < desaceleracaomina:
+desaceleracao = desaceleracaomina
 
-# Exemplo de uso da função  
-investimentosAno1 <- [[1000, 2000], [1500, 2500]]  
-investimentosAno2 <- [[1200, 1800], [1300, 2700]]  
+// Cálculo do tempo necessário para reduzir a velocidade até o limite seguro
+velocidade = velocidadeinicial - desaceleracao \* tempo
 
-totalInvestimentos <- SomarMatrizesInvestimento(investimentosAno1, investimentosAno2)  
-Escrever("Total de investimentos acumulados:")  
-ImprimirMatriz(totalInvestimentos)  
+ENQUANTO velocidade > velocidadesegura E tempo < tempomaximo:
+tempo++
+velocidade = velocidadeinicial - desaceleracao \* tempo
+
+    // Verificação de se a desaceleração não ultrapassou o limite
+    SE tempo >= tempomaximo:
+        ESCREVE("Tempo máximo excedido. Não foi possível atingir a velocidade segura.")
+        PARE
+
+// Caso a sonda atinja a velocidade segura dentro do tempo máximo
+SE velocidade <= velocidadesegura:
+ESCREVE("Tempo necessário é: ", tempo)
+
+FIMALGORITMO
 ```
-Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+10:
+
+```
+FUNCAO MultiplicarMatrizesInvestimento(matrizA, matrizB):
+// Verificar se é possível fazer a multiplicação
+SE tamanho(matrizA[0]) ≠ tamanho(matrizB) ENTAO:
+RETORNAR "As matrizes não podem ser multiplicadas. Dimensões incompatíveis."
+
+    linhasA <- tamanho(matrizA)           // N de linhas de A
+    colunasA <- tamanho(matrizA[0])       // N de colunas de A (também número de linhas de B)
+    colunasB <- tamanho(matrizB[0])       // N de colunas de B
+
+    // Criação da matriz resultado
+    matrizResultado <- novaMatriz(linhasA, colunasB)
+
+    // Multiplicação de matrizes
+    PARA i de 0 até linhasA-1 FACA:            // Percorrendo linhas de A
+        PARA j de 0 até colunasB-1 FACA:       // Percorrendo colunas de B
+            matrizResultado[i][j] <- 0         // Inicializa a posição
+            PARA k de 0 até colunasA-1 FACA:   // Percorre os elementos da linha de A e coluna de B
+                matrizResultado[i][j] <- matrizResultado[i][j] + (matrizA[i][k] * matrizB[k][j])
+
+    RETORNAR matrizResultado
+```
+
+    - Dúvidas: O funcionamento da multiplicação dos elementos da matriz nessa ideia ainda me deixa um pouco confusa, gostaria de saber se há dicas para fixar um pouco melhor esse conceito.
+
+    - Uma dúvida adicional seria o porquê da escolha de pseudocódigo ao invés de javaScript

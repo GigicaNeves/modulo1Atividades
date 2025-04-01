@@ -6,7 +6,8 @@ Programação Orientada a Objetos (POO), como herança e reutilização de méto
 
 Veja a implementação inicial abaixo:
 
-``// Classe base
+```
+// Classe base
 class Animal {
 constructor(nome, especie, idade) {
 this.nome = nome;
@@ -36,7 +37,7 @@ const animal2 = new AnimalSelvagem("Nala", "Leoa", 5, "Savana Africana");
 console.log(animal1.exibirInformacoes());
 console.log(animal2.exibirInformacoes());
 console.log(animal2.exibirHabitat());
-``
+```
 
 Perguntas Dissertativas
 
@@ -113,16 +114,19 @@ R: Ele teria um conflito para instanciar/declarar os atributos da classe mãe e 
 m) Crie uma nova subclasse chamada AnimalDomestico, que herda de Animal e inclui
 um novo atributo chamado nomeDono.
 
+```
 class AnimalDomestico extends Animal {
 constructor (nome, especie, idade, nomeDono){
 super(nome, espécie, idade);
 this.nomeDono = nomeDono;
 }
 }
+```
 
 n) Implemente um método chamado exibirDono() que retorne: "Dono de [nome do
 animal]: [nome do dono]".
 
+```
 class AnimalDomestico extends Animal {
 constructor (nome, especie, idade, nomeDono){
 super(nome, espécie, idade);
@@ -134,3 +138,4 @@ this.nomeDono = nomeDono;
     }
 
 }
+```
